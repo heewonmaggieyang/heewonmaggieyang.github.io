@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Heewon Yang's provisional reconstruction of Richmond, California census enumeration districts in 1940 and 1950, with historical sources and downloadable boundaries.">
+  <title>Richmond ED Digitization | Heewon Yang</title>
+  <link rel="canonical" href="https://esczzang.github.io/research/richmond/">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="map.css">
+</head>
+<body>
+  <a class="skip-link" href="#explore">Skip to maps</a>
+  <header class="page-header">
+    <a class="back-link" href="../../#village-title">← It Takes a Village to Raise a Child</a>
+    <p class="eyebrow">It Takes a Village to Raise a Child</p>
+    <h1>Richmond enumeration districts</h1>
+    <p class="subtitle">Digitizing census geography, 1940–1950</p>
+    <p class="intro">I reconstructed census enumeration district (ED) boundaries in Richmond, California, using historical maps and official district descriptions. Explore the two census geographies side by side and inspect the sources behind each district.</p>
+    <p class="status-note"><strong>Provisional research boundaries.</strong> The map includes 22 districts from 1940 and 122 of 129 from 1950. Dashed outlines mark three lower-confidence 1940 reconstructions. Historical accuracy remains under review.</p>
+  </header>
+
+  <main>
+    <section id="explore" aria-labelledby="explore-heading">
+      <div class="section-heading"><h2 id="explore-heading">Explore the districts</h2><span>Same view and scale in both years</span></div>
+      <div class="toolbar">
+        <label class="district-picker">Select a district <select id="district"><option value="">Choose a year and ED</option></select></label>
+        <div class="button-group" aria-label="Map navigation">
+          <button id="zoom-in" type="button" aria-label="Zoom in on both maps">+</button>
+          <button id="zoom-out" type="button" aria-label="Zoom out on both maps">−</button>
+          <button id="urban-view" type="button">Urban area</button>
+          <button id="full-view" type="button">All boundaries</button>
+          <button id="focus-selected" type="button" disabled>Zoom to district</button>
+        </div>
+      </div>
+      <div class="layer-options">
+        <label><input type="checkbox" id="roads" checked> Modern roads for reference</label>
+        <label><input type="checkbox" id="labels" checked> ED numbers</label>
+        <label><input type="checkbox" id="shipyards" checked> Kaiser shipyards on the 1950 map</label>
+      </div>
+      <p class="map-help">Click a district to read its description. Drag to pan; use the wheel or + / − to zoom. Keyboard users can select a district above, or focus a map and use the arrow and + / − keys.</p>
+      <div class="map-pair">
+        <section class="map-panel year-1940" aria-labelledby="year-1940">
+          <div class="panel-heading"><h3 id="year-1940">1940</h3><span>22 of 22 districts reconstructed</span></div>
+          <svg id="map-1940" class="map" role="group" aria-label="Interactive map of Richmond enumeration districts in 1940" tabindex="0"></svg>
+        </section>
+        <section class="map-panel year-1950" aria-labelledby="year-1950">
+          <div class="panel-heading"><h3 id="year-1950">1950</h3><span>122 of 129 districts reconstructed</span></div>
+          <svg id="map-1950" class="map" role="group" aria-label="Interactive map of Richmond enumeration districts in 1950" tabindex="0"></svg>
+        </section>
+      </div>
+      <div class="map-legend"><span><i class="key selected-key"></i> Selected district</span><span><i class="key uncertain-key"></i> Lower-confidence boundary</span><span><i class="yard-key">◆</i> Shipyard reference location, 1941–1945</span><span id="scale-note"></span></div>
+      <noscript><p>Enable JavaScript to explore the maps. The source images and GeoJSON downloads below remain available.</p></noscript>
+      <section class="district-detail" aria-labelledby="selection-title" aria-live="polite">
+        <div><p class="eyebrow">District record</p><h3 id="selection-title">Select a district on either map</h3><p id="selection-status">Its original boundary description and reconstruction method will appear here.</p></div>
+        <div><h4>Official boundary description</h4><p id="selection-description">Use the district menu or click a boundary.</p><div id="source-links" class="links"></div><h4 id="method-heading" hidden>Reconstruction method</h4><p id="selection-method"></p></div>
+      </section>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">From historical maps to digital boundaries</h2>
+      <p>Original census maps and written descriptions provide the boundary evidence. Road intersections and period topographic maps help place those boundaries in geographic coordinates. The images below show selected source sheets with provisional boundary overlays.</p>
+      <div class="source-pair">
+        <figure><a href="source_overlay_1940.jpg" target="_blank" rel="noopener"><img src="source_overlay_1940.jpg" alt="Historical 1940 Richmond census map with reconstructed boundaries overlaid" loading="lazy"></a><figcaption>1940 source sheet and reconstruction · <a href="source_overlay_1940.jpg" target="_blank" rel="noopener">Open image</a></figcaption></figure>
+        <figure><a href="source_overlay_1950.jpg" target="_blank" rel="noopener"><img src="source_overlay_1950.jpg" alt="Historical 1950 Richmond census map with traced boundaries overlaid" loading="lazy"></a><figcaption>1950 source sheet and reconstruction · <a href="source_overlay_1950.jpg" target="_blank" rel="noopener">Open image</a></figcaption></figure>
+      </div>
+      <details class="methods"><summary>Coverage, reconstruction methods, and sources</summary>
+        <p><strong>1940.</strong> Nineteen districts were reconstructed from shared street boundaries using the 1950 geometry and an assumption of unchanged streets, checked against 1940 descriptions. EDs 7-62, 7-63, and 7-80 are separate lower-confidence reconstructions that include coastal or offshore areas. Matching boundaries across years are not independent evidence of historical accuracy.</p>
+        <p><strong>1950.</strong> Most boundaries were traced from census map sheets and georeferenced by map zone. EDs 69-122 and 69-129 use period USGS coastal references. EDs 69-10, 69-22, 69-23, 69-24, and 69-36 have no published boundary here; EDs 69-37 and 69-38 remain outside the validated georeferencing domain and are also omitted.</p>
+        <p><strong>Interpretation.</strong> These are provisional district boundaries, not household locations or independently validated official GIS files. Modern roads are geographic references, not a reconstruction of the historical street network. Shipyard markers indicate approximate reference locations, not property boundaries. The two maps show the same geographic view without clipping the districts to a common footprint.</p>
+        <p><strong>Sources.</strong> U.S. National Archives and Records Administration census ED maps and descriptions (1940 and 1950); U.S. Census Bureau TIGER/Line roads (2023); period USGS topographic maps (1948–1949). Original district-description scans are linked in the selected district record.</p>
+        <p>Boundary snapshot · October 28, 2026. This public edition contains geography and source descriptions only.</p>
+      </details>
+      <div class="downloads"><span>Download provisional boundaries</span><a href="ed-1940.geojson" download>1940 GeoJSON</a><a href="ed-1950.geojson" download>1950 GeoJSON</a></div>
+    </section>
+    <footer><span>Heewon Yang · Richmond ED digitization</span><a href="../../">Return to homepage ↑</a></footer>
+  </main>
+  <script src="map-data.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>

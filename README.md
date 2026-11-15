@@ -32,4 +32,16 @@ GitHub 공식 안내: https://docs.github.com/en/pages/getting-started-with-gith
 
 Eva Lestant의 학술 홈페이지를 참고해 프로필 사이드바, 여백, 연구 분류 중심의 구조를 새로 구현했습니다. 다른 연구자의 사진·소개·논문 내용은 포함하지 않았습니다. 개인정보와 연구 내용의 기준은 본인의 CV 및 제공한 SOP입니다.
 
-실행 코드, 외부 글꼴, 분석 추적 도구, 폼, 쿠키를 사용하지 않습니다. GitHub Pages 외에도 정적 파일 호스팅에서 작동합니다.
+홈페이지는 외부 글꼴, 분석 추적 도구, 폼, 쿠키를 사용하지 않습니다. GitHub Pages 외에도 정적 파일 호스팅에서 작동합니다.
+
+## Richmond ED 지도
+
+`research/richmond/`는 1940·1950년 Richmond ED 디지털화 작업의 공개용 인터랙티브 경계 지도입니다. 별도 서버나 외부 JavaScript 라이브러리가 필요하지 않습니다.
+
+홈페이지의 Work in Progress에 있는 “It Takes a Village to Raise a Child” 프로젝트 공저자 아래에 지도 링크를 배치합니다. 별도 Research Resources 섹션은 사용하지 않습니다.
+
+- 원본 작업 위치: `names_local/outputs/richmond_ed_pilot`의 2026-10-28 경계 결과물.
+- 1940년 22개, 1950년 122개 경계 및 공개 설명·지도 출처만 포함합니다. Census 통계, 개인·가구 레코드, 내부 검토 자료는 포함하지 않습니다.
+- 지도는 동기화된 확대·이동, ED 선택, 도로·라벨·조선소 레이어, 원본 설명 링크와 GeoJSON 다운로드를 지원합니다.
+- 1940년 7-62·7-63·7-80은 낮은 확신도의 잠정 경계로 표시합니다. 1950년 전체 129개 중 7개는 공개 경계가 없습니다. 방법과 범위는 페이지에 설명되어 있습니다.
+- `map-data.js`와 두 GeoJSON은 허용한 지리·출처 필드만 추출한 공개용 사본입니다. 원본 `data.js`, `full_count_*`, 통계 파일을 그대로 업로드하지 않습니다.
