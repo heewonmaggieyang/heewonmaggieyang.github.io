@@ -1,6 +1,10 @@
 'use strict';
 (() => {
   const data = window.RICHMOND_PUBLIC;
+  for (const row of Object.values(window.RICHMOND_ED_STATS.rows)) {
+    const s=row.summary;
+    if (!data.districts.some(d=>d.ed===s.ed)) data.districts.push({ed:s.ed,year:s.census,parts:[],status:'unmapped',method:'No boundary is published for this district. Demographic summaries remain available.'});
+  }
   const ns = 'http://www.w3.org/2000/svg';
   const byId = id => document.getElementById(id);
   const districts = new Map(data.districts.map(d => [d.ed, d]));
@@ -65,7 +69,7 @@
     if(ed && !districts.has(ed)) return;
     selected=ed;
     byId('district').value=ed;
-    byId('focus-selected').disabled=!ed;
+    byId('focus-selected').disabled=!ed || !districts.get(ed).parts.length;
     for(const [key,p] of paths) p.classList.toggle('selected',key===ed);
     byId('source-links').replaceChildren();
     byId('method-heading').hidden=!ed;
@@ -77,7 +81,7 @@
     } else {
       const d=districts.get(ed);
       byId('selection-title').textContent=`${d.year} · ED ${ed}`;
-      byId('selection-status').textContent=d.status.includes('low_confidence')?'Lower-confidence provisional reconstruction.':'Provisional reconstruction · historical accuracy under review.';
+      byId('selection-status').textContent=!d.parts.length?'Demographics available · boundary not mapped.':d.status.includes('low_confidence')?'Lower-confidence provisional reconstruction.':'Provisional reconstruction · historical accuracy under review.';
       byId('selection-description').textContent=d.description || 'No transcribed description is available for this district.';
       byId('selection-method').textContent=d.method;
       (d.description_urls || []).forEach((url,index)=>{
@@ -86,6 +90,7 @@
       });
     }
     if(updateHash) history.replaceState(null,'',location.pathname+location.search+(ed?'#'+ed:''));
+    window.RichmondDemographics.show(ed ? districts.get(ed) : null);
   }
   const dropdown=byId('district');
   for(const year of [1940,1950]) {
@@ -96,8 +101,9 @@
     const districtLayer=svg('g',{},map);
     map.append(roadLayer);
     const labelLayer=svg('g',{class:'label-layer'},map);
-    for(const d of data.districts.filter(d=>d.year===year)) {
-      options.append(new Option(`${year} · ED ${d.ed}`,d.ed));
+    for(const d of data.districts.filter(d=>d.year===year).sort((a,b)=>a.ed.localeCompare(b.ed,'en',{numeric:true}))) {
+      options.append(new Option(`${year} · ED ${d.ed}${d.parts.length?'':' (statistics only)'}`,d.ed));
+      if(!d.parts.length) continue;
       const p=svg('path',{d:rings(d).map(r=>path(r,true)).join(' '),class:'district'+(d.status.includes('low_confidence')?' low-confidence':''),'data-ed':d.ed},districtLayer);
       svg('title',{},p).textContent=`${year} ED ${d.ed} · provisional boundary`;
       p.addEventListener('click',()=>{if(!map.wasDragged) choose(d.ed);});
@@ -134,10 +140,11 @@
   byId('zoom-out').addEventListener('click',()=>zoom(1.3));
   byId('urban-view').addEventListener('click',()=>fit(bounds(points(data.districts.filter(d=>d.year===1950)))));
   byId('full-view').addEventListener('click',()=>fit(bounds(points(data.districts))));
-  byId('focus-selected').addEventListener('click',()=>{if(selected)fit(bounds(points([districts.get(selected)])));});
+  byId('focus-selected').addEventListener('click',()=>{if(selected && districts.get(selected).parts.length)fit(bounds(points([districts.get(selected)])));});
   for(const [input,layer] of [['roads','road-layer'],['labels','label-layer'],['shipyards','yard-layer']]) byId(input).addEventListener('change',event=>document.querySelectorAll('.'+layer).forEach(g=>{g.style.display=event.target.checked?'':'none';}));
   window.addEventListener('pointerup',()=>{drag=null;});
   window.addEventListener('resize',()=>{const center=[view[0]+view[2]/2,view[1]+view[3]/2],height=view[2]*maps[0].clientHeight/maps[0].clientWidth;setView([center[0]-view[2]/2,center[1]-height/2,view[2],height]);});
   fit(bounds(points(data.districts.filter(d=>d.year===1950))));
-  if(districts.has(location.hash.slice(1))) {choose(location.hash.slice(1),false);fit(bounds(points([districts.get(selected)])));}
+  window.RichmondDemographics.init(data.districts,paths);
+  if(districts.has(location.hash.slice(1))) {choose(location.hash.slice(1),false);if(districts.get(selected).parts.length)fit(bounds(points([districts.get(selected)])));}
 })();

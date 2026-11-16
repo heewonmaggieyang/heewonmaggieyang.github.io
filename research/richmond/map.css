@@ -41,7 +41,7 @@ h3 { margin:0; color:var(--blue); font-size:21px; font-weight:600; }
 .year-1950 .district { fill:#cee0d8; stroke:#568975; }
 .district:hover { fill:#b6cbd4; }
 .district.low-confidence { stroke:#a16c2d; stroke-dasharray:5 3; fill:#e7dac2; }
-.district.selected { fill:#e4a478; stroke:#ae541e; stroke-width:2.5; }
+.district.selected { fill:#e4a478 !important; stroke:#ae541e; stroke-width:2.5; }
 .road-layer { pointer-events:none; }
 .road { stroke:#c2ccd0; stroke-width:.65; fill:none; vector-effect:non-scaling-stroke; pointer-events:none; }
 .ed-label { fill:#37545f; text-anchor:middle; dominant-baseline:middle; paint-order:stroke; stroke:white; stroke-linejoin:round; pointer-events:none; }
@@ -73,6 +73,28 @@ figcaption { padding:10px 14px; font-size:12px; color:var(--muted); }
 .downloads { display:flex; flex-wrap:wrap; gap:9px 22px; margin-top:18px; font-size:13px; }
 .downloads span { color:var(--muted); }
 footer { display:flex; justify-content:space-between; gap:16px; padding:22px 0 28px; margin-top:35px; font-size:12px; color:var(--muted); }
+.metric-picker { max-width:100%; }
+.metric-picker select { max-width:100%; width:365px; min-width:0; }
+.demographic-legend { margin:0 0 16px; padding:12px 15px; background:#f7f9fa; font-size:12px; }
+.demographic-legend[hidden] { display:none; }
+.demographic-legend small { display:block; color:var(--muted); }
+.legend-swatches { display:flex; flex-wrap:wrap; gap:7px 16px; margin:8px 0; }
+.legend-swatches span { display:inline-flex; gap:5px; align-items:center; }
+.legend-swatches i { width:18px; height:12px; border:1px solid #99a9b0; }
+.demographics { margin-top:28px; }
+#demographics-context,.data-note { font-size:13px; color:var(--muted); }
+.demographic-cards { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; margin:15px 0; }
+.demographic-cards>div { display:flex; flex-direction:column-reverse; justify-content:end; padding:14px; background:#f6f8f7; }
+.demographic-cards dt { font-size:11px; color:var(--muted); line-height:1.5; }
+.demographic-cards dd { margin:0 0 5px; font-size:24px; line-height:1.3; color:var(--green); font-variant-numeric:tabular-nums; }
+#demographic-tables summary { font-size:13px; color:var(--blue); cursor:pointer; }
+.table-scroll { max-width:100%; overflow-x:auto; margin:18px 0; }
+.table-scroll table { border-collapse:collapse; width:100%; font-size:12px; }
+.table-scroll caption { text-align:left; font-weight:600; color:var(--green); margin-bottom:5px; }
+.table-scroll th,.table-scroll td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--line); font-weight:400; }
+.table-scroll thead th { font-weight:600; }
+@media(max-width:800px) { .demographic-cards { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:420px) { .demographic-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:800px) { .page-header,main { padding-left:22px; padding-right:22px; } h1 { font-size:30px; } .map-pair,.source-pair { grid-template-columns:1fr; } .map { height:430px; } .district-detail { grid-template-columns:1fr; gap:16px; } .section-heading { flex-direction:column; gap:0; margin-bottom:10px; } .section-heading h2 { margin-bottom:3px; } }
 @media(max-width:420px) { .page-header,main { padding-left:17px; padding-right:17px; } .subtitle { font-size:18px; } .map { height:370px; } .panel-heading { padding:10px 12px; } .panel-heading span { font-size:10px; } footer { flex-direction:column; } }
 @media print { .toolbar,.layer-options,.map-help,.back-link,.skip-link { display:none; } .map-pair { grid-template-columns:1fr 1fr; } .map { height:360px; } .map-panel,.district-detail,figure { break-inside:avoid; } }
