@@ -32,15 +32,22 @@ a:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; border-ra
   padding: 76px 48px 32px;
 }
 .profile { position: sticky; top: 64px; align-self: start; }
-.profile-photo {
+.profile-photo-frame {
   display: block;
   width: 224px;
   max-width: 100%;
-  height: auto;
   aspect-ratio: 8 / 9;
-  object-fit: cover;
-  object-position: 70% 35%;
+  overflow: hidden;
   margin-bottom: 24px;
+}
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 80%;
+  transform: scale(2.2);
+  transform-origin: 70% 80%;
 }
 h1 {
   margin: 0 0 16px;
@@ -117,7 +124,7 @@ footer a { color: var(--muted); text-decoration: none; }
   html { scroll-padding-top: 16px; }
   .layout { display: block; max-width: 600px; padding: 36px 24px 24px; }
   .profile { position: static; margin-bottom: 38px; }
-  .profile-photo { width: 160px; margin-bottom: 20px; }
+  .profile-photo-frame { width: 160px; margin-bottom: 20px; }
   h1 { font-size: 29px; margin-bottom: 12px; }
   .cv-link { margin-top: 19px; }
   nav { flex-direction: row; flex-wrap: wrap; column-gap: 22px; row-gap: 0; margin-top: 24px; padding: 13px 0 8px; border-bottom: 1px solid var(--line); }
