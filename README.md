@@ -2,7 +2,7 @@
 
 GitHub Pages용 개인 학술 홈페이지입니다. 별도 빌드나 패키지 설치 없이 작동합니다.
 
-예정 주소: https://esczzang.github.io/
+홈페이지 주소: https://heewonmaggieyang.github.io/
 
 ## 파일 수정
 
@@ -20,11 +20,11 @@ GitHub Pages용 개인 학술 홈페이지입니다. 별도 빌드나 패키지 
 
 ## GitHub Pages 배포
 
-1. GitHub의 `Esczzang` 계정에 `esczzang.github.io` 저장소를 생성합니다. 기존 저장소가 있다면 먼저 내용을 확인하고 합칩니다.
+1. GitHub의 `heewonmaggieyang` 계정에 `heewonmaggieyang.github.io` 저장소를 생성합니다. 기존 저장소가 있다면 먼저 내용을 확인하고 합칩니다.
 2. 이 폴더의 파일을 `main` 브랜치에 올립니다.
 3. 저장소 Settings → Pages → Build and deployment에서 **Deploy from a branch**를 선택합니다.
 4. Branch는 **main**, 폴더는 **/ (root)**로 설정하고 저장합니다.
-5. 배포 완료 후 https://esczzang.github.io/ 를 확인합니다.
+5. 배포 완료 후 https://heewonmaggieyang.github.io/ 를 확인합니다.
 
 GitHub 공식 안내: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
 
