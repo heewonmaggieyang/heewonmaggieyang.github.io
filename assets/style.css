@@ -85,7 +85,7 @@ h1 {
   align-items: center;
   gap: 10px;
   border: 1px solid #aebdc4;
-  margin: 24px 0 14px;
+  margin: 16px 0 0;
   padding: 7px 12px;
   min-height: 42px;
   color: var(--ink);
@@ -95,7 +95,7 @@ h1 {
 }
 .cv-link:hover { background: #f3f7f8; border-color: var(--blue); }
 .file-type { color: var(--muted); font-size: 11px; letter-spacing: 0.05em; }
-.email { display: block; width: fit-content; font-size: 15px; text-decoration: none; }
+.email { display: block; width: fit-content; margin-top: 16px; font-size: 15px; text-decoration: none; }
 .email:hover { text-decoration: underline; }
 nav { display: flex; flex-direction: column; align-items: flex-start; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 28px; gap: 2px; }
 nav a { padding: 5px 0; min-height: 36px; font-size: 15px; color: var(--muted); text-decoration: none; }
@@ -143,12 +143,39 @@ footer a { color: var(--muted); text-decoration: none; }
 @media (max-width: 680px) {
   html { scroll-padding-top: 16px; }
   .layout { display: block; max-width: 600px; padding: 36px 24px 24px; }
-  .profile { position: static; margin-bottom: 38px; }
-  .profile-photo-frame { width: 160px; margin-bottom: 20px; }
+  .profile { position: static; margin-bottom: 42px; text-align: center; }
+  .profile-photo-frame { width: 210px; margin: 0 auto 22px; }
   h1 { font-size: 31px; margin-bottom: 12px; }
-  .cv-link { margin-top: 19px; }
-  nav { flex-direction: row; flex-wrap: wrap; column-gap: 22px; row-gap: 0; margin-top: 24px; padding: 13px 0 8px; border-bottom: 1px solid var(--line); }
-  nav a { min-height: 44px; padding: 9px 0; }
+  .email { margin-inline: auto; }
+  nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    max-width: 420px;
+    margin: 28px auto 0;
+    padding: 0;
+    border: 0;
+  }
+  nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 10px 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #f5f8f9;
+    color: var(--blue);
+    line-height: 1.4;
+    text-align: center;
+    transition: background-color 150ms, border-color 150ms;
+  }
+  nav a:hover, nav a:focus-visible {
+    background: #eaf1f4;
+    border-color: #aebdc4;
+    text-decoration: none;
+  }
   .profile .location { display: none; }
   section + section { margin-top: 38px; }
   .presentations li { gap: 14px; }

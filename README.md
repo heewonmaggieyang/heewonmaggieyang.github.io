@@ -9,7 +9,7 @@ GitHub Pages용 개인 학술 홈페이지입니다. 별도 빌드나 패키지 
 - `index.html`: 소개, 논문 제목과 공저자, 학회 발표
 - `assets/style.css`: 글꼴, 색상, 간격, 모바일 화면
 - `assets/fonts/`: 홈페이지에서 직접 제공하는 Lato Regular, Italic, Bold 및 SIL Open Font License. 본문은 18px이며 제목과 보조 정보도 함께 확대했습니다.
-- `assets/cv_heewon_yang.pdf`: 공개 CV. CV를 수정한 뒤 이 파일도 갱신합니다.
+- `assets/cv_heewon_yang.pdf`: 공개 CV. 현재 `Yonsei/PhD Application/output/pdf/cv_heewon_yang.pdf`의 2026-11-23 일반용 CV 사본입니다. CV를 수정한 뒤 이 파일도 갱신합니다.
 - `assets/favicon.svg`: 브라우저 탭 아이콘
 - `assets/photo4.jpg`: 프로필 사진. 원본 파일을 유지하고 CSS로 표시 영역을 조정합니다.
 - `assets/papers/sme-policy-draft.pdf`: SME 정책 논문 초안 (2026년 8월)
