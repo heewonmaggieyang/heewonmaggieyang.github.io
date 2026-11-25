@@ -8,6 +8,7 @@ GitHub Pages용 개인 학술 홈페이지입니다. 별도 빌드나 패키지 
 
 - `index.html`: 소개, 논문 제목과 공저자, 학회 발표
 - `assets/style.css`: 글꼴, 색상, 간격, 모바일 화면
+- `assets/fonts/`: 홈페이지에서 직접 제공하는 Lato Regular, Italic, Bold 및 SIL Open Font License. 본문은 18px이며 제목과 보조 정보도 함께 확대했습니다.
 - `assets/cv_heewon_yang.pdf`: 공개 CV. CV를 수정한 뒤 이 파일도 갱신합니다.
 - `assets/favicon.svg`: 브라우저 탭 아이콘
 - `assets/photo4.jpg`: 프로필 사진. 원본 파일을 유지하고 CSS로 표시 영역을 조정합니다.
@@ -32,7 +33,7 @@ GitHub 공식 안내: https://docs.github.com/en/pages/getting-started-with-gith
 
 Eva Lestant의 학술 홈페이지를 참고해 프로필 사이드바, 여백, 연구 분류 중심의 구조를 새로 구현했습니다. 다른 연구자의 사진·소개·논문 내용은 포함하지 않았습니다. 개인정보와 연구 내용의 기준은 본인의 CV 및 제공한 SOP입니다.
 
-홈페이지는 외부 글꼴, 분석 추적 도구, 폼, 쿠키를 사용하지 않습니다. GitHub Pages 외에도 정적 파일 호스팅에서 작동합니다.
+Lato는 Google Fonts의 배포 파일을 저장소에 포함하여 제공합니다. 방문 시 외부 글꼴 서비스에 연결하지 않습니다. 홈페이지는 분석 추적 도구, 폼, 쿠키를 사용하지 않습니다. GitHub Pages 외에도 정적 파일 호스팅에서 작동합니다.
 
 ## Richmond ED 지도
 
