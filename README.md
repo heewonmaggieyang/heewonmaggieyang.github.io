@@ -10,13 +10,13 @@ GitHub Pages용 개인 학술 홈페이지입니다. 별도 빌드나 패키지 
 - `assets/style.css`: 글꼴, 색상, 간격, 모바일 화면
 - `assets/cv_heewon_yang.pdf`: 공개 CV. CV를 수정한 뒤 이 파일도 갱신합니다.
 - `assets/favicon.svg`: 브라우저 탭 아이콘
-- `assets/photo2.jpg`: 프로필 사진. 원본 파일을 유지하고 CSS로 표시 영역을 조정합니다.
+- `assets/photo3.jpg`: 프로필 사진. 원본 파일을 유지하고 CSS로 표시 영역을 조정합니다.
 - `assets/papers/sme-policy-draft.pdf`: SME 정책 논문 초안 (2026년 8월)
 - `assets/papers/exchange-rates-draft.pdf`: 환율 논문 영문 초안 (2026년 10월)
 
 논문은 현재 CV의 Working Papers / Work in Progress 분류를 유지합니다. Working Papers 두 편에는 공저자 아래에 PDF 초안 링크와 초안 날짜를 표시합니다.
 
-프로필 사진은 `Yonsei/PhD Application/photo2.jpg`에서 가져왔습니다. 첫 논문은 `epc_2025/03 발표 자료/2026년 10월 16일-midewest/midwest_draft_v1.pdf`, 두 번째는 `TEC/06 보고서/english_draft_v3/paper_draft_v3_en.pdf`의 사본입니다. PDF 내용은 수정하지 않았습니다. 첫 초안의 표제는 "The Impact of SME Support on Supply Chain Networks"이며, 홈페이지 제목은 기존 CV 기준 표기를 유지합니다.
+프로필 사진은 `Yonsei/PhD Application/photo3.jpg`에서 가져왔습니다. 첫 논문은 `epc_2025/03 발표 자료/2026년 10월 16일-midewest/midwest_draft_v1.pdf`, 두 번째는 `TEC/06 보고서/english_draft_v3/paper_draft_v3_en.pdf`의 사본입니다. PDF 내용은 수정하지 않았습니다. 첫 초안의 표제는 "The Impact of SME Support on Supply Chain Networks"이며, 홈페이지 제목은 기존 CV 기준 표기를 유지합니다.
 
 ## GitHub Pages 배포
 
